@@ -6,7 +6,7 @@
 clear all
 *ssc install outreg2
 
-global path "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data" //data path
+global datapath "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\data" //data path
 global exportpath "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\final_results" //storage path for plots
 
 

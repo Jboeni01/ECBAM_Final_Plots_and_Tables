@@ -9,10 +9,10 @@ set more off
 *ssc install estout 
 
 *cd "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data"
-global path "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\data"
+global datapath "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\data"
 global exportpath "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\final_results" //storage path for plots
 
-use "${path}\EA_CO2_toAMNE_allyears.dta", clear
+use "${datapath}\EA_CO2_toAMNE_allyears.dta", clear
 
 ************
 * -1- Prepare Data

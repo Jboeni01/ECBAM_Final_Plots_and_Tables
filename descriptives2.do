@@ -3,14 +3,14 @@
 *
 ********************************************************************************
 
-global path "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data" //data path
+global datapath "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\data" //data path
 global exportpath "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\descr_graphs" //storage path for plots
 
 *******************
 *-1- Load and prepare data
 *******************
 
-use "${path}\data\imports_inputs_GO_allyears.dta", clear
+use "${datapath}\imports_inputs_GO_allyears.dta", clear
 
 gen EA=0 //generate Euro Area Dummy & fill 
 replace EA=1 if inlist(cou, "AUT", "BEL", "CYP", "DEU", "ESP", "EST", "FIN", "FRA", "GRC")
@@ -110,8 +110,8 @@ foreach j of local ind_names {
     twoway ///
         (tsline ei if own=="D" & EU==1 & ind_name=="`j'", lcolor(red) lpattern(dash)) ///
         (tsline ei if own=="F" & EU==1 & ind_name=="`j'", lcolor(red)) ///
-        (tsline ei if own=="D" & EU==0 & ind_name=="`j'", lcolor(blue) lpattern(dash)) ///
-        (tsline ei if own=="F" & EU==0 & ind_name=="`j'", lcolor(blue)), ///
+        (tsline ei if own=="D" & EU==0 & ind_name=="`j'", lcolor(dknavy) lpattern(dash)) ///
+        (tsline ei if own=="F" & EU==0 & ind_name=="`j'", lcolor(dknavy)), ///
         title("`j'") xlabel(2005(1)2016) xtitle("") ytitle("") ///
         legend(order(1 "D-EU" 2 "F-EU" 3 "D-non EU" 4 "F-non EU") rows(1)) ///
         legend(position(bottom))

@@ -6,14 +6,14 @@ clear all
 set more off
 
 
-global path "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\data"
+global datapath "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\data"
 global exportpath "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\final_results"
 
 *******************
 *-1- Load and prepare data
 *******************
 
-use "${path}\imports_inputs_GO_allyears.dta", clear
+use "${datapath}\imports_inputs_GO_allyears.dta", clear
 
 
 

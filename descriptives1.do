@@ -1,7 +1,13 @@
-global path "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data"
-global store_path "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\descr_graphs"
+*******************************************************************************
+* Set of Descriptives 1 - Emission Intensities 
+* Base for Figure 1 & Figure A1
+********************************************************************************
 
-use "${path}\data\imports_inputs_GO_allyears.dta", clear //load data, contains CO2 emissions and output
+
+global datapath "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data"
+global exportpath "C:\Users\u0149894\Desktop\Code\ECB_ECBAM_data\descr_graphs"
+
+use "${datapath}\data\imports_inputs_GO_allyears.dta", clear //load data, contains CO2 emissions and output
 
 *-1- Data preparation:
 collapse (sum) CO2emission go, by(year cou ind) //aggregate across type of ownership 
@@ -74,7 +80,7 @@ foreach l of local inds {
 	
 	local ind=ind[1]
 
-	graph export "${store_path}\descr_emisugo_2016_`ind'.pdf", replace
+	graph export "${exportpath}\descr_emisugo_2016_`ind'.pdf", replace
 	
 	restore 
   }
